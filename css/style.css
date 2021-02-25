@@ -1,0 +1,198 @@
+html {
+	width: 100%;
+	height: 100%;
+}
+body {
+	width: 100%;
+	height: 100%;
+	display: block;
+    box-shadow: inset 0px 0px 100px rgba(0,0,0,0.6);
+}
+
+
+figure.calculator {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin-top: -200px;
+    margin-left: -135px;
+    max-width: 270px; 
+    max-height: ;
+    border: 1px solid rgb(160,160,160);
+    box-shadow:
+		0px 1px 0px rgb(140, 140, 140),
+		0px 2px 0px rgb(130, 130, 130),
+		0px 3px 0px rgb(125, 125, 125),
+		0px 4px 0px rgb(150, 150, 150),
+		0px 5px 0px rgb(100, 100, 100),
+		0px -10px 40px rgba(0, 0, 0, 0.4);
+	border-radius: 7px;
+    background: rgb(219,219,219);
+    
+}
+
+.viewport {
+    box-sizing: border-box;
+    height: 5em;
+    background: #BABABA;
+    background: -webkit-radial-gradient(50% 40%, #BABABA, #8E8E8E);
+    background: -moz-radial-gradient(50% 40%, #BABABA, #8E8E8E);
+    background: radial-gradient(ellipse at 50% 40%, #BABABA, #8E8E8E);
+    border: 1px solid rgb(160,160,160);
+    box-shadow:
+		inset 0px 2px 0px rgba(140, 140, 140, 1),
+		inset 0px 3px 1px rgba(130, 130, 130, 1),
+		inset 0px 4px 2px rgba(125, 125, 125, 1),
+		inset 0px -10px 40px rgba(0, 0, 0, 0.1);
+    border-radius: 3px;
+    margin: 20px;
+
+}
+
+p#summary {
+    font-family: 'Inconsolata', monospace;
+    font-weight: 300;
+    height: .75em;
+    font-size: .75em;
+    color: rgba(77,77,77,1);
+    padding: 10px 10px 0px 10px;
+    text-align: right;
+    margin-top: 0px;
+    margin-right: 12px;
+}
+p#output {
+    
+    font-family: 'Inconsolata', monospace;
+    font-weight: 500;
+    font-size: 2em;
+    color: rgba(77,77,77,1);
+    padding: 0px 10px 10px 10px;
+    text-align: right;
+    margin-top: -8px;
+    margin-right: 12px;
+}
+.key-column-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.key-top {
+    box-sizing: border-box;
+    display: flex;
+    flex-flow: row nowrap;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.num-key-container {
+    display: flex;
+    flex-flow: row wrap;
+    width: 150px;
+    margin-right: 20px;
+}
+
+.function-key-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.equals-container {
+    margin: 2px 20px 25px 20px;
+    padding-left: 1px;
+}
+.clear-container {
+    margin: 2px 20px 5px 20px;
+    padding-left: 1px;
+}
+
+p.center {
+   margin-top: 12px;
+    text-align: center; 
+}
+
+p.clear {
+    margin-top: 5px;
+     text-align: center; 
+     font-size: .75em;
+ }
+
+
+.key {width: 40px;}
+.key-two {width: 90px;}
+.key-three {width: 212px;}
+.key-clear {
+    width: 40px;
+    height: 20px;
+}
+
+.key, .key-two, .key-three, .key-clear {
+    cursor: pointer;
+    box-sizing: border-box;
+    height: 40px;
+    display: block;
+    float: left;
+    margin-top: 5px;
+    margin-left: 5px;
+    margin-right: 5px;
+    margin-bottom: 6px;
+    color: rgb(80,80,80);
+    box-shadow:
+        0px 1px 0px rgb(250, 250, 250),
+        0px 2px 0px rgb(250, 250, 250),
+        0px 3px 0px rgb(250, 250, 250),
+        0px 4px 0px 1px rgb(130, 130, 130),
+        0px 4px 0px 2px rgb(70, 70, 70);
+    background-image: linear-gradient( white, rgba(238,238,238));
+    border-radius: 3px;
+    
+}
+
+/*for full click*/
+div.number-key:active,
+div.equals-key:active,
+div.function-key:active {
+    margin-top: 8px;
+    margin-bottom: 3px;
+    box-shadow: 
+    0px 1px 0px 1px rgb(130, 130, 130),
+    0px 1px 0px 2px rgb(70, 70, 70);
+}
+/*for javascript required for trackpad "tap"*/
+.active {
+    margin-top: 8px;
+    margin-bottom: 3px;
+    box-shadow: 
+    0px 1px 0px 1px rgb(130, 130, 130),
+    0px 1px 0px 2px rgb(70, 70, 70);
+}
+
+
+/*
+
+
+*/
+ 
+/*design inspiration borrowed from 
+Copyright (c) 2021 - Douglas Amport - https://codepen.io/carlcalderon/pen/kaAgC?editors=1100
+
+
+Permission is hereby granted, free of charge, to any person 
+obtaining a copy of this software and associated documentation 
+files (the "Software"), to deal in the Software without restriction,
+ including without limitation the rights to use, copy, modify, 
+merge, publish, distribute, sublicense, and/or sell copies of 
+the Software, and to permit persons to whom the Software is 
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall 
+be included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, 
+EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES 
+OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND 
+NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT 
+HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, 
+WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, 
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER 
+DEALINGS IN THE SOFTWARE.
+*/

@@ -4,9 +4,11 @@
 <head>
   <meta charset="utf-8">
 
-  <title>Boilerplate</title>
-  <meta name="description" content="Boilerplate Site">
-  <meta name="6865" content="SitePoint">
+  <title>Basic Calculator</title>
+  <meta name="description" content="basic calculator">
+  
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/normalize.css">
 
@@ -15,7 +17,78 @@
 
 <body>
  <main>
-     
+     <figure class="calculator">
+       <div class="viewport">
+        <!--Add line for summary-->
+        <p id="summary"></p>
+         <p id="output">0</p>
+       </div>
+       <div class="key-column-container">
+        <div class="clear-container">
+          <div class="key-clear function-key" style="height: 20px;" id="clear">
+            <p class="clear">AC</p>
+          </div>
+        </div>
+        <div class="key-top">
+          <div class="num-key-container">
+            <div class="key number-key" id="nine">
+              <p class="center">9</p>
+            </div>
+            <div class="key number-key" id="eight">
+              <p class="center">8</p>
+            </div>
+            <div class="key number-key" id="seven">
+              <p class="center">7</p>
+            </div>
+            <div class="key number-key" id="six">
+              <p class="center">6</p>
+            </div>
+            <div class="key number-key" id="five">
+              <p class="center">5</p>
+            </div>
+            <div class="key number-key" id="four">
+              <p class="center">4</p>
+            </div>
+            <div class="key number-key" id="three">
+              <p class="center">3</p>
+            </div> 
+            <div class="key number-key" id="two">
+          <p class="center">2</p>
+            </div>
+            <div class="key number-key" id="one">
+              <p class="center">1</p>
+            </div>
+            <div class="key number-key" id="decimal">
+              <p class="center">.</p>
+            </div>
+            <div class="key-two number-key" style="width" id="zero">
+              <p class="center">0</p>
+            </div>
+          </div>
+          <div class="function-key-container">
+           <div class="key function-key" id="add">
+            <p class="center">+</p>
+           </div>
+           <div class="key function-key" id="subtract">
+            <p class="center">-</p>
+           </div>
+           <div class="key function-key" id="multiply">
+            <p class="center">x</p>
+           </div>
+           <div class="key function-key" id="divide">
+            <p class="center">/</p>
+           </div>
+         </div>
+        </div>
+        <div class="equals-container">
+          <div class="key-three function-key equals-key" style="width: 212px" id="equals">
+            <p class="center">=</p>
+          </div>
+        </div>
+       </div>
+      
+    </figure>
+
  </main>
 
  <script src="scripts/script.js"></script>
