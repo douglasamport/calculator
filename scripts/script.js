@@ -35,9 +35,9 @@ let summary = document.querySelector("#summary")
 let allNumbers = document.querySelectorAll(".number-key")
 
 startNumberListeners()
-animateKeystrokeOnTap()
+animateNumKeyOnTap()
 
-function animateKeystrokeOnTap() {
+function animateNumKeyOnTap() {
     for (let i = 0; i < allNumbers.length; i++) {
         allNumbers[i].addEventListener("click", toggleActive);
     }
@@ -55,56 +55,23 @@ function endNumberListeners() {
     }
 }
 
-
-// let nine = document.querySelector("#nine");
-// nine.addEventListener("click" , toggleActive);
-// nine.addEventListener("click", numberButtonClick);
-
-// let eight = document.querySelector("#eight");
-// eight.addEventListener("click" , toggleActive);
-// eight.addEventListener("click", numberButtonClick);
-
-// let seven = document.querySelector("#seven");
-// seven.addEventListener("click" , toggleActive);
-// seven.addEventListener("click", numberButtonClick);
-
-// let six = document.querySelector("#six");
-// six.addEventListener("click" , toggleActive);
-// six.addEventListener("click", numberButtonClick);
-
-// let five = document.querySelector("#five");
-// five.addEventListener("click" , toggleActive);
-// five.addEventListener("click", numberButtonClick);
-
-// let four = document.querySelector("#four");
-// four.addEventListener("click" , toggleActive);
-// four.addEventListener("click", numberButtonClick);
-
-// let three = document.querySelector("#three");
-// three.addEventListener("click" , toggleActive);
-// three.addEventListener("click", numberButtonClick);
-
-// let two = document.querySelector("#two");
-// two.addEventListener("click" , toggleActive);
-// two.addEventListener("click", numberButtonClick);
-
-// let one = document.querySelector("#one");
-// one.addEventListener("click" , toggleActive);
-// one.addEventListener("click", numberButtonClick);
-
 let decimal = document.querySelector("#decimal");
 decimal.addEventListener("click" , toggleActive);
 decimal.addEventListener("click", numberButtonClick);
 
-// let zero = document.querySelector("#zero");
-// zero.addEventListener("click" , toggleActive);
-// zero.addEventListener("click", numberButtonClick);
-
-
-
 //function buttons variables and Event listeners
+
+let allFuncKeys = document.querySelectorAll(".function-key")
+
+animateFuncKeyOnTap()
+
+function animateFuncKeyOnTap() {
+    for (let i = 0; i < allFuncKeys.length; i++) {
+        allFuncKeys[i].addEventListener("click", toggleActive);
+    }
+}
+
 let sum = document.querySelector("#add");
-sum.addEventListener("click", toggleActive);
 sum.addEventListener("click", function() {
     valueB = ''
     valueA = checkValue(valueA, workingValue);
@@ -120,7 +87,6 @@ sum.addEventListener("click", function() {
 });
 
 let difference = document.querySelector("#subtract");
-difference.addEventListener("click", toggleActive);
 difference.addEventListener("click", function() {
     valueB = ''
     valueA = checkValue(valueA, workingValue);
@@ -136,7 +102,6 @@ difference.addEventListener("click", function() {
 });
 
 let product = document.querySelector("#multiply");
-product.addEventListener("click", toggleActive);
 product.addEventListener("click", function() {
     valueB = ''
     valueA = checkValue(valueA, workingValue);
@@ -152,7 +117,6 @@ product.addEventListener("click", function() {
 });
 
 let quotient = document.querySelector("#divide");
-quotient.addEventListener("click", toggleActive);
 quotient.addEventListener("click", function() {
     valueB = '';
     valueA = checkValue(valueA, workingValue);
@@ -168,7 +132,6 @@ quotient.addEventListener("click", function() {
 });
 
 let equals = document.querySelector("#equals");
-equals.addEventListener("click", toggleActive);
 equals.addEventListener("click", function() {
     if (valueB !== '') {
         valueB = valueB
@@ -176,21 +139,13 @@ equals.addEventListener("click", function() {
     else {valueB = workingValue}
     summary.innerText = `${valueA} ${symbol} ${valueB} =`;
     total = decimalCheckAndShift(valueA, valueB);
-    workingValue = '';
     output.innerText = formatDisplay(total);
-    valueA = total
-    endNumberListeners()
-    //valueB = ''
-    // console.log(total);
-    // console.log(workingValue)
-    // console.log(valueA)
-    // console.log(valueB)
+    workingValue = total;
+    valueA = '';
+    endNumberListeners();
 });
 
-
-//clear button variable & function
 let clear = document.querySelector("#clear");
-clear.addEventListener("click" , toggleActive);
 clear.addEventListener("click", function() {
     workingValue = '';
     valueA = '';
@@ -199,10 +154,36 @@ clear.addEventListener("click", function() {
     operation = '';
     output.innerText = '0';
     summary.innerText = '';
-
     decimal.addEventListener("click", numberButtonClick);
-    startNumberListeners()
+    startNumberListeners();
 });
+
+let sign = document.querySelector("#sign");
+sign.addEventListener("click", () => {
+    if (Math.sign(workingValue) === -1) {
+        workingValue = Math.abs(workingValue);
+        output.innerText = workingValue
+    }
+    else if (Math.sign(workingValue)=== 1) {
+        workingValue = -Math.abs(workingValue);
+        output.innerText = workingValue
+    }
+    else {
+        workingValue = ''
+        output.innerText = 0;
+    }
+});
+
+
+
+
+if (Math.sign(workingValue) === -1) {
+    workingValue = Math.abs(workingValue);
+}
+else if (Math.sign(workingValue)=== 1) {
+    workingValue = -Math.abs(workingValue);
+}
+else {workingValue = workingValue}
 
 
 
